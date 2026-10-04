@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,44942,t=>{"use strict";var c=t.i(43476);t.s(["TrackedLink",0,function({eventName:t,children:e,...i}){return(0,c.jsx)("a",{...i,"data-analytics-event":t,onClick:()=>{try{let c=window.umami;Promise.resolve(c?.track(t)).catch(()=>{})}catch{}},children:e})}])}]);
