@@ -1,0 +1,49 @@
+{
+  "title": "Georgia Tech RoboJackets - URC SAR 2024",
+  "channel": "RoboJackets",
+  "published": "2024-03-01T17:38:09-08:00",
+  "source": "https://www.youtube.com/watch?v=jIm-jgbV9rE",
+  "method": "Native 1920x1080 decoded frames from public video playback. WebP encoding only; no generative enhancement or upscaling. Original video date and team marks retained.",
+  "frames": [
+    {
+      "file": "/projects/robonav/v1-rover-integration.webp",
+      "source": "https://www.youtube.com/watch?v=jIm-jgbV9rE&t=225s",
+      "capturedSeconds": 225,
+      "width": 1920,
+      "height": 1080,
+      "sourcePixelFileSha256": "165ca325ea62bce19a1068f456a9833bf39e8093900d24ef22d638897e521e47"
+    },
+    {
+      "file": "/projects/robonav/v1-suspension.webp",
+      "source": "https://www.youtube.com/watch?v=jIm-jgbV9rE&t=105s",
+      "capturedSeconds": 105,
+      "width": 1920,
+      "height": 1080,
+      "sourcePixelFileSha256": "178516f9a6c55db3871304648b3a5c24c09b195cac6c79af06179f97c5bdb558"
+    },
+    {
+      "file": "/projects/robonav/v1-arm-integration.webp",
+      "source": "https://www.youtube.com/watch?v=jIm-jgbV9rE&t=25s",
+      "capturedSeconds": 25,
+      "width": 1920,
+      "height": 1080,
+      "sourcePixelFileSha256": "78a865160f6b11713605298593a293c9d84a5f4962a02fd093dce002b2b594ac"
+    },
+    {
+      "file": "/projects/robonav/v1-gripper-test.webp",
+      "source": "https://www.youtube.com/watch?v=jIm-jgbV9rE&t=175s",
+      "capturedSeconds": 175,
+      "width": 1920,
+      "height": 1080,
+      "sourcePixelFileSha256": "f30363f099dea054d9218972229dffa40a011076f96c81ff0d65208f751fc250"
+    },
+    {
+      "file": "/projects/robonav/v1-field-test.webp",
+      "source": "https://www.youtube.com/watch?v=jIm-jgbV9rE&t=265s",
+      "capturedSeconds": 265,
+      "width": 1920,
+      "height": 1080,
+      "sourcePixelFileSha256": "dfb070a174f8a8f5f6f662591a9a0e6ebfce7886233132ace17bb37921a22513"
+    }
+  ]
+}

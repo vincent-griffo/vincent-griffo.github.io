@@ -1,0 +1,18 @@
+{
+  "source": "full-robot-video-frame.png",
+  "method": "Hand-traced alpha mask; original RGB copied without modification",
+  "crop": {
+    "left": 490,
+    "top": 190,
+    "width": 535,
+    "height": 440
+  },
+  "sourceOffset": {
+    "x": 497,
+    "y": 183
+  },
+  "width": 543,
+  "height": 462,
+  "visiblePixels": 95774,
+  "changedVisibleRGBPixels": 0
+}

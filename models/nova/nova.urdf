@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- NOVA display URDF. Native link surfaces and axes. Steering limits are unconfigured source placeholders; this is not a dynamics model. -->
+<robot
+  name="URDF_Assembly">
+  <link
+    name="Chassis">
+    <inertial>
+      <origin
+        xyz="1.38124609813436 0.853681013553133 0.983226785692117"
+        rpy="0 0 0" />
+      <mass
+        value="3.33420367481636" />
+      <inertia
+        ixx="0.00598415281656805"
+        ixy="3.20800852579244E-06"
+        ixz="-3.27369939268276E-05"
+        iyy="0.0117475266567331"
+        iyz="-2.7284945831909E-05"
+        izz="0.0107891817622857" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/chassis.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/chassis.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Diff Bar">
+    <inertial>
+      <origin
+        xyz="0.00606197836615496 1.4432899320127E-14 3.07531777821168E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.0555907308036177" />
+      <inertia
+        ixx="0.000254421124774316"
+        ixy="-1.15809505579352E-22"
+        ixz="2.46896193855546E-22"
+        iyy="1.41257616412767E-05"
+        iyz="1.57546138085439E-06"
+        izz="0.000240840495884623" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/diff-bar.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/diff-bar.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Diff Bar Revolute"
+    type="revolute">
+    <origin
+      xyz="1.3816 -0.91756 0.88848"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Diff Bar" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Left Drivetrain">
+    <inertial>
+      <origin
+        xyz="0.00287495658381709 0.00645284756919329 -0.00137878788479096"
+        rpy="0 0 0" />
+      <mass
+        value="0.530199975341613" />
+      <inertia
+        ixx="0.000547773402636186"
+        ixy="6.76157587661946E-06"
+        ixz="7.81985608929708E-08"
+        iyy="0.000630151090820175"
+        iyz="5.88995840684673E-06"
+        izz="0.000231293379728914" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/left-drivetrain.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/left-drivetrain.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left Drivetrain Revolute"
+    type="revolute">
+    <origin
+      xyz="1.5111 -0.98162 0.83295"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Left Drivetrain" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Front Left Swerve">
+    <inertial>
+      <origin
+        xyz="0.0494089688708893 -8.98670178881567E-05 -0.00352620250464564"
+        rpy="0 0 0" />
+      <mass
+        value="0.219151538258503" />
+      <inertia
+        ixx="9.24316427689429E-05"
+        ixy="4.02180768153014E-07"
+        ixz="2.93974975197483E-07"
+        iyy="0.000262340372980238"
+        iyz="-4.99393958448961E-08"
+        izz="0.000246189159839323" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/front-left-swerve.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/front-left-swerve.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Front Left Swerve Revolute"
+    type="revolute">
+    <origin
+      xyz="0.0033 -0.013626 0.1981"
+      rpy="-1.5708 0.014763 -1.5708" />
+    <parent
+      link="Left Drivetrain" />
+    <child
+      link="Front Left Swerve" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Front Left Wheel">
+    <inertial>
+      <origin
+        xyz="-0.009705729283491 -3.6800960196981E-06 2.12212708339266E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.138314694805185" />
+      <inertia
+        ixx="0.000269271961042471"
+        ixy="-3.14034835751102E-09"
+        ixz="1.81163430392489E-09"
+        iyy="0.00014548534556204"
+        iyz="9.52172824139367E-09"
+        izz="0.000145496374594944" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/front-left-wheel.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.764705882352941 0.725490196078431 0.96078431372549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/front-left-wheel.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Front Left Wheel Revolute"
+    type="continuous">
+    <origin
+      xyz="0.1356 0 -0.0097"
+      rpy="1.556 1.5708 0" />
+    <parent
+      link="Front Left Swerve" />
+    <child
+      link="Front Left Wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Back Left Swerve">
+    <inertial>
+      <origin
+        xyz="0.0494089688670889 -8.98670178878236E-05 -0.00352620250464519"
+        rpy="0 0 0" />
+      <mass
+        value="0.219151538258507" />
+      <inertia
+        ixx="9.2431642768944E-05"
+        ixy="4.02180768153174E-07"
+        ixz="2.93974975197706E-07"
+        iyy="0.000262340372980242"
+        iyz="-4.99393958447863E-08"
+        izz="0.000246189159839327" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/back-left-swerve.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/back-left-swerve.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Back Left Swerve Revolute"
+    type="revolute">
+    <origin
+      xyz="0.0033 -0.0077067 -0.20282"
+      rpy="-1.5708 0.014763 -1.5708" />
+    <parent
+      link="Left Drivetrain" />
+    <child
+      link="Back Left Swerve" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Back Left Wheel">
+    <inertial>
+      <origin
+        xyz="-0.00970572746919585 -0.000003674823861872 0.000002116744375002"
+        rpy="0 0 0" />
+      <mass
+        value="0.138314658051864" />
+      <inertia
+        ixx="0.000269271890930276"
+        ixy="-3.13607272764651E-09"
+        ixz="1.80113036719906E-09"
+        iyy="0.000145485284263464"
+        iyz="9.49525648618233E-09"
+        izz="0.000145496362322511" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/back-left-wheel.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.764705882352941 0.725490196078431 0.96078431372549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/back-left-wheel.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Back Left Wheel Revolute"
+    type="continuous">
+    <origin
+      xyz="0.1356 0 -0.0097"
+      rpy="1.556 1.5708 0" />
+    <parent
+      link="Back Left Swerve" />
+    <child
+      link="Back Left Wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Left Diff Bar Connection">
+    <inertial>
+      <origin
+        xyz="0.00583432640124171 0.00374412652944089 -0.0305819390261906"
+        rpy="0 0 0" />
+      <mass
+        value="0.00151990976790185" />
+      <inertia
+        ixx="1.61603145188922E-07"
+        ixy="-1.37083763730535E-13"
+        ixz="-6.44119771781927E-15"
+        iyy="1.59333421284333E-07"
+        iyz="1.853918669364E-08"
+        izz="1.01743643339633E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/left-diff-bar-connection.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/left-diff-bar-connection.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left Diff Bar Connection Revolute"
+    type="revolute">
+    <origin
+      xyz="0.0035 0.049435 0.00072985"
+      rpy="0 0 0" />
+    <parent
+      link="Left Drivetrain" />
+    <child
+      link="Left Diff Bar Connection" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Right Drivetrain">
+    <inertial>
+      <origin
+        xyz="0.00287495653526837 0.00643179022458795 -0.00147389699140998"
+        rpy="0 0 0" />
+      <mass
+        value="0.530199975776535" />
+      <inertia
+        ixx="0.000547773398539986"
+        ixy="6.76199391539114E-06"
+        ixz="-2.1625738383064E-08"
+        iyy="0.000630238045491917"
+        iyz="-5.28228763062448E-11"
+        izz="0.000231206422145815" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/right-drivetrain.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/right-drivetrain.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right Drivetrain Revolute"
+    type="revolute">
+    <origin
+      xyz="1.2521 -0.98156 0.83298"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Right Drivetrain" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Front Right Swerve">
+    <inertial>
+      <origin
+        xyz="0.0494089688828834 -0.00352620250538216 8.98670145226266E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.21915153804279" />
+      <inertia
+        ixx="9.24316427562111E-05"
+        ixy="2.93974973054606E-07"
+        ixz="-4.02180783869676E-07"
+        iyy="0.000246189159788644"
+        iyz="4.9939391062679E-08"
+        izz="0.000262340372929172" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/front-right-swerve.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/front-right-swerve.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Front Right Swerve Revolute"
+    type="revolute">
+    <origin
+      xyz="0.0033 -0.0107 -0.20268"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="Right Drivetrain" />
+    <child
+      link="Front Right Swerve" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Front Right Wheel">
+    <inertial>
+      <origin
+        xyz="0.00969427073606921 -3.68010979934219E-06 2.12212613348584E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.138314694974913" />
+      <inertia
+        ixx="0.000269271961068461"
+        ixy="-3.14031744456073E-09"
+        ixz="1.81163618555958E-09"
+        iyy="0.000145485345610443"
+        iyz="9.52172661288504E-09"
+        izz="0.000145496374669609" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/front-right-wheel.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.764705882352941 0.725490196078431 0.96078431372549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/front-right-wheel.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Front Right Wheel Revolute"
+    type="continuous">
+    <origin
+      xyz="0.1356 -0.0097 0"
+      rpy="0 0 1.5708" />
+    <parent
+      link="Front Right Swerve" />
+    <child
+      link="Front Right Wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Back Right Swerve">
+    <inertial>
+      <origin
+        xyz="0.0494089688762696 -0.00352620250537794 8.98670145226266E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.219151538042789" />
+      <inertia
+        ixx="9.24316427562113E-05"
+        ixy="2.93974973054554E-07"
+        ixz="-4.02180783869628E-07"
+        iyy="0.000246189159788643"
+        iyz="4.99393910626525E-08"
+        izz="0.000262340372929172" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/back-right-swerve.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/back-right-swerve.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Back Right Swerve Revolute"
+    type="revolute">
+    <origin
+      xyz="0.0033 -0.0107 0.19828"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="Right Drivetrain" />
+    <child
+      link="Back Right Swerve" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Back Right Wheel">
+    <inertial>
+      <origin
+        xyz="0.00969427254748378 -3.69046201154077E-06 2.13826196915345E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.138314584714893" />
+      <inertia
+        ixx="0.00026927175067956"
+        ixy="-3.15938321979936E-09"
+        ixz="1.8073437564132E-09"
+        iyy="0.000145485210708764"
+        iyz="9.54819371202716E-09"
+        izz="0.000145496288794422" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/back-right-wheel.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.764705882352941 0.725490196078431 0.96078431372549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/back-right-wheel.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Back Right Wheel Revolute"
+    type="continuous">
+    <origin
+      xyz="0.1356 -0.0097 0"
+      rpy="0 0 1.5708" />
+    <parent
+      link="Back Right Swerve" />
+    <child
+      link="Back Right Wheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Right Diff Bar Connection">
+    <inertial>
+      <origin
+        xyz="0.00791733182170518 0.00372660966300875 0.0305840784807145"
+        rpy="0 0 0" />
+      <mass
+        value="0.00151990976480939" />
+      <inertia
+        ixx="1.61603144658987E-07"
+        ixy="1.37090414938934E-13"
+        ixz="-6.41469959658117E-15"
+        iyy="1.59354608954232E-07"
+        iyz="-1.84537417225655E-08"
+        izz="1.01531761273481E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/right-diff-bar-connection.glb" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="links/right-diff-bar-connection.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right Diff Bar Connection Revolute"
+    type="revolute">
+    <origin
+      xyz="0.0035 0.04944 0"
+      rpy="0 0 0" />
+    <parent
+      link="Right Drivetrain" />
+    <child
+      link="Right Diff Bar Connection" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

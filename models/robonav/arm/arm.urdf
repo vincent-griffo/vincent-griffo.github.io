@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="ASM  -False Arm">
+  <link
+    name="Base">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="base.glb" />
+      </geometry>
+    </visual>
+  </link>
+  <link
+    name="Shoulder">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="shoulder.glb" />
+      </geometry>
+    </visual>
+  </link>
+  <joint
+    name="Shoulder"
+    type="revolute">
+    <origin
+      xyz="0 -0.0125 0.125"
+      rpy="0 0 0" />
+    <parent
+      link="Base" />
+    <child
+      link="Shoulder" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Elbow">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="elbow.glb" />
+      </geometry>
+    </visual>
+  </link>
+  <joint
+    name="Elbow"
+    type="revolute">
+    <origin
+      xyz="0.381 0.0315500000000001 0"
+      rpy="0 0 0" />
+    <parent
+      link="Shoulder" />
+    <child
+      link="Elbow" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Wrist Pitch">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="wrist-pitch.glb" />
+      </geometry>
+    </visual>
+  </link>
+  <joint
+    name="Wrist Pitch"
+    type="revolute">
+    <origin
+      xyz="0.3302 -0.00317500000000001 0"
+      rpy="0 0 0" />
+    <parent
+      link="Elbow" />
+    <child
+      link="Wrist Pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Wrist Roll">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="wrist-roll.glb" />
+      </geometry>
+    </visual>
+  </link>
+  <joint
+    name="Wrist Roll"
+    type="continuous">
+    <origin
+      xyz="0.045 -0.015875 0"
+      rpy="0 0 0" />
+    <parent
+      link="Wrist Pitch" />
+    <child
+      link="Wrist Roll" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="End Effector">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="end-effector.glb" />
+      </geometry>
+    </visual>
+  </link>
+  <joint
+    name="End Effector"
+    type="fixed">
+    <origin
+      xyz="0.220573388958103 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Wrist Roll" />
+    <child
+      link="End Effector" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

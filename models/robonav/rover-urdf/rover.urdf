@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="RoboNav_URDF_Assembly">
+  <link
+    name="Chassis">
+  </link>
+  <link
+    name="Arm Base">
+  </link>
+  <joint
+    name="Arm Base Prismatic"
+    type="prismatic">
+    <origin xyz="1.9865545035964016 -1.2331499686552165 0.9678134010568521" rpy="0 -1.5707535675863422 1.5708163958315486" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Arm Base" />
+    <axis xyz="0.999999999993254 -0.0000036732051033217944 1.3492435731251319e-11" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Arm Bicep">
+  </link>
+  <joint
+    name="Arm Bicep Revolute"
+    type="revolute">
+    <origin xyz="-0.00525079703573561 -0.0001771846694811341 0.12101426024815964" rpy="3.1415853071795867 -9.693522803355793e-27 -3.1415853071795867" />
+    <parent
+      link="Arm Base" />
+    <child
+      link="Arm Bicep" />
+    <axis xyz="-0.999999999939284 -0.000011019615309420214 -9.444705011621055e-11" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Arm Forearm">
+  </link>
+  <joint
+    name="Arm Forearm Revolute"
+    type="revolute">
+    <origin xyz="0.0015677658478381318 0.42398773990786753 0.06269755679058497" rpy="3.1415742583331534 -0.00038832067465969323 -3.141405343234938" />
+    <parent
+      link="Arm Bicep" />
+    <child
+      link="Arm Forearm" />
+    <axis xyz="0.99999990906428 0.00017628359534281902 0.0003883239961608818" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Diff Wrist Beginning">
+  </link>
+  <joint
+    name="Diff Wrist Pitch"
+    type="revolute">
+    <origin xyz="0.027531422925402005 -0.3571223540456536 0.1760393199227379" rpy="0.0000256717842120403 -0.00038832397878889644 0.00017995681492823725" />
+    <parent
+      link="Arm Forearm" />
+    <child
+      link="Diff Wrist Beginning" />
+    <axis xyz="0.999999999993254 -0.0000036732051021323416 1.2143192157288772e-10" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Diff Wrist Output">
+  </link>
+  <joint
+    name="Diff Wrist Roll"
+    type="fixed">
+    <origin xyz="0.007396690770178127 -0.08770062221678576 0.04323275652695213" rpy="1.2034997455172327e-22 -0.4579900000000001 -1.5708" />
+    <parent
+      link="Diff Wrist Beginning" />
+    <child
+      link="Diff Wrist Output" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Top Back Linkage">
+  </link>
+  <joint
+    name="Top Back Linkage Revolute"
+    type="fixed">
+    <origin xyz="0.05108739890700731 -0.010004787864448805 0.02948687026837188" rpy="0.45798999999999995 2.117582368135751e-22 1.5708" />
+    <parent
+      link="Diff Wrist Output" />
+    <child
+      link="Top Back Linkage" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Top Finger">
+  </link>
+  <joint
+    name="Top Finger Hinge"
+    type="fixed">
+    <origin xyz="0.019500150120515092 0.01811808294602013 0.05721644735007669" rpy="3.1415853071795867 -2.117582368135751e-22 3.1415853071795867" />
+    <parent
+      link="Top Back Linkage" />
+    <child
+      link="Top Finger" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Top Mid Linkage">
+  </link>
+  <joint
+    name="Top Mid Linkage Revolute"
+    type="fixed">
+    <origin xyz="0.07309251713812737 -0.021002346947884054 0.012492192119712697" rpy="0.45798999999999995 2.117582368135751e-22 1.5708" />
+    <parent
+      link="Diff Wrist Output" />
+    <child
+      link="Top Mid Linkage" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Top Mid Connector">
+  </link>
+  <joint
+    name="Top Mid Connector Revolute"
+    type="fixed">
+    <origin xyz="0.02599780250738437 0.01738027086754501 0.023226812405567676" rpy="-3.1415853071795867 2.117582368135751e-22 -3.1415853071795867" />
+    <parent
+      link="Top Mid Linkage" />
+    <child
+      link="Top Mid Connector" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Top Front Linkages">
+  </link>
+  <joint
+    name="Top Front Linkages Revolute"
+    type="fixed">
+    <origin xyz="0.12609210552642258 -0.02600493366076606 0.029517829462557266" rpy="0.45798999999999995 2.117582368135751e-22 1.5708" />
+    <parent
+      link="Diff Wrist Output" />
+    <child
+      link="Top Front Linkages" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Bottom Back Linkage">
+  </link>
+  <joint
+    name="Bottom Back Linkage Revolute"
+    type="fixed">
+    <origin xyz="0.051103013723210466 -0.010004896615790626 -0.029487139107557125" rpy="0.4583277207887081 8.987709758231951e-8 1.5707963515898884" />
+    <parent
+      link="Diff Wrist Output" />
+    <child
+      link="Bottom Back Linkage" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Bottom Finger">
+  </link>
+  <joint
+    name="Bottom Finger Hinge"
+    type="fixed">
+    <origin xyz="0.019500283728592804 -0.025913996300447106 -0.054126218198614406" rpy="-3.1412622792024094 -0.0000015311532945522691 3.1415886188170594" />
+    <parent
+      link="Bottom Back Linkage" />
+    <child
+      link="Bottom Finger" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Bottom Mid Linkage">
+  </link>
+  <joint
+    name="Bottom Mid Linkage Revolute"
+    type="fixed">
+    <origin xyz="0.07309405143051029 -0.021002341561492166 -0.012488946655807964" rpy="0.45798999999999995 2.117582368135751e-22 1.5708" />
+    <parent
+      link="Diff Wrist Output" />
+    <child
+      link="Bottom Mid Linkage" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Bottom Mid Connector">
+  </link>
+  <joint
+    name="Bottom Mid Connector Revolute"
+    type="fixed">
+    <origin xyz="0.015997619175805444 -0.0052667571366007415 -0.02852772619947541" rpy="-1.310467914697634 -0.0000015097762124094771 -0.0000031850346634479547" />
+    <parent
+      link="Bottom Mid Linkage" />
+    <child
+      link="Bottom Mid Connector" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Bottom Front Linkages">
+  </link>
+  <joint
+    name="Bottom Front Linkages Revolute"
+    type="fixed">
+    <origin xyz="-1.1673633178173548 0.84835872248847 -0.7252286703740536" rpy="1.5708 0.0116720000000001 1.323320626799256e-22" />
+    <parent
+      link="Diff Wrist Output" />
+    <child
+      link="Bottom Front Linkages" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Right Claw">
+  </link>
+  <joint
+    name="Right Claw Revolute"
+    type="fixed">
+    <origin xyz="0.11108649804091408 -0.020512765929017185 -0.006647589688795585" rpy="0 -1.5707772636432278 0.00013839524128219968" />
+    <parent
+      link="Diff Wrist Output" />
+    <child
+      link="Right Claw" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Left Claw">
+  </link>
+  <joint
+    name="Left Claw Revolute"
+    type="fixed">
+    <origin xyz="0.1110812174718685 0.020495698348192204 -0.00664534334376049" rpy="0 -1.5707508983571659 -0.00013160335324673971" />
+    <parent
+      link="Diff Wrist Output" />
+    <child
+      link="Left Claw" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Right Drivetrain Integration">
+  </link>
+  <joint
+    name="Right Drivetrain Integration Revolute"
+    type="fixed">
+    <origin xyz="1.7071069012293574 -1.0757917264964296 0.7015187845443087" rpy="0 1.5707517832260267 1.5708127227664739" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Right Drivetrain Integration" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Front Right Swerve">
+  </link>
+  <joint
+    name="Front Right Swerve Revolute"
+    type="revolute">
+    <origin xyz="0.034927271031484186 -0.3429396368772055 0.03175695690282021" rpy="0 -1.5707926536057681 1.5708000000000002" />
+    <parent
+      link="Right Drivetrain Integration" />
+    <child
+      link="Front Right Swerve" />
+    <axis xyz="-0.999999999993254 0.000003673205103321795 -1.3492374498911362e-11" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Front Right Wheel">
+  </link>
+  <joint
+    name="Front Right Wheel Revolute"
+    type="continuous">
+    <origin xyz="0.23285051642049814 -0.0019822558836873894 -0.000056535391910639277" rpy="-1.5683036151876655 0.000011669962471335993 1.5707926535886176" />
+    <parent
+      link="Front Right Swerve" />
+    <child
+      link="Front Right Wheel" />
+    <axis xyz="0.9999999999680259 -0.00000799673252069386 1.9934764911759572e-8" />
+  </joint>
+  <link
+    name="Back Right Swerve">
+  </link>
+  <joint
+    name="Back Right Swerve Revolute"
+    type="revolute">
+    <origin xyz="0.034927271031484075 0.3428577736101994 0.031756956902819766" rpy="0 -1.5707926536057681 1.5708000000000002" />
+    <parent
+      link="Right Drivetrain Integration" />
+    <child
+      link="Back Right Swerve" />
+    <axis xyz="-0.999999999993254 0.000003673205103321795 -1.3492374498911362e-11" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Back Right Wheel">
+  </link>
+  <joint
+    name="Back Right Wheel Revolute"
+    type="continuous">
+    <origin xyz="0.2328504843040854 -0.0019822870685848315 -0.00005918909338098466" rpy="-1.5683 -1.2479031973815906e-22 1.5708" />
+    <parent
+      link="Back Right Swerve" />
+    <child
+      link="Back Right Wheel" />
+    <axis xyz="0.999999999966269 0.0000036548546366088487 -0.000007355556827310304" />
+  </joint>
+  <link
+    name="Right Diff Bar Link">
+  </link>
+  <joint
+    name="Right Diff Bar Link Revolute"
+    type="fixed">
+    <origin xyz="-0.024643743874959267 0.48191858288091516 0.000007262172770694519" rpy="3.1415853071795867 -6.730375482324401e-27 -3.1415853071795867" />
+    <parent
+      link="Right Drivetrain Integration" />
+    <child
+      link="Right Diff Bar Link" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Left Drivetrain Integration">
+  </link>
+  <joint
+    name="Left Drivetrain Integration Revolute"
+    type="fixed">
+    <origin xyz="1.707120801556858 -1.0758143847861321 1.296364081874404" rpy="0 -1.5707535675863422 1.5708163958315486" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Left Drivetrain Integration" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Front Left Swerve">
+  </link>
+  <joint
+    name="Front Left Swerve Revolute"
+    type="revolute">
+    <origin xyz="0.03492565386894442 -0.3429396879632458 -0.03175567895004883" rpy="0 1.5707926536057681 -1.5708000000000002" />
+    <parent
+      link="Left Drivetrain Integration" />
+    <child
+      link="Front Left Swerve" />
+    <axis xyz="-0.9999999999865077 -0.0000036732185957327454 -0.000003673191610886063" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Front Left Wheel">
+  </link>
+  <joint
+    name="Front Left Wheel Revolute"
+    type="continuous">
+    <origin xyz="0.2328504847384375 0.0019836969167039697 0.00005733725013268298" rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="Front Left Swerve" />
+    <child
+      link="Front Left Wheel" />
+    <axis xyz="-0.999999999973015 2.6984921022593076e-11 -0.000007346423699004978" />
+  </joint>
+  <link
+    name="Back Left Swerve">
+  </link>
+  <joint
+    name="Back Left Swerve Revolute"
+    type="revolute">
+    <origin xyz="0.034928172953282655 0.3428603875585088 -0.03175819803438751" rpy="0 1.5707926536057681 -1.5708000000000002" />
+    <parent
+      link="Left Drivetrain Integration" />
+    <child
+      link="Back Left Swerve" />
+    <axis xyz="-0.9999999999865077 -0.0000036732185957327454 -0.000003673191610886063" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Back Left Wheel">
+  </link>
+  <joint
+    name="Back Left Wheel Revolute"
+    type="continuous">
+    <origin xyz="0.23285048473843617 0.001983696916700417 0.00005733725010692581" rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="Back Left Swerve" />
+    <child
+      link="Back Left Wheel" />
+    <axis xyz="-0.999999999973015 2.6984921022593076e-11 -0.000007346423699004978" />
+  </joint>
+  <link
+    name="Left Diff Bar Link">
+  </link>
+  <joint
+    name="Left Diff Bar Link Revolute"
+    type="fixed">
+    <origin xyz="-0.012121614248489898 0.48230515962646314 0.08705878163712155" rpy="-0.008862540809414564 -2.7537839295941496e-7 -0.000014506138420109149" />
+    <parent
+      link="Left Drivetrain Integration" />
+    <child
+      link="Left Diff Bar Link" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Upper Tower">
+  </link>
+  <joint
+    name="Upper Tower Hinge"
+    type="fixed">
+    <origin xyz="1.28890466280141 -1.603110118775744 1.2695571137971664" rpy="1.5708381211382711 0.000023041458432487472 0.00001639597157721314" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Upper Tower" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Gimbal Dynamic">
+  </link>
+  <joint
+    name="Gimbal Dynamic Revolute"
+    type="fixed">
+    <origin xyz="0.0595804044579038 0.023967247037384842 -0.16139778600059373" rpy="1.5708 1.5678999999999967 1.5708" />
+    <parent
+      link="Upper Tower" />
+    <child
+      link="Gimbal Dynamic" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Camera">
+  </link>
+  <joint
+    name="Camera Revolute"
+    type="fixed">
+    <origin xyz="-0.0424970901860362 -0.017383733164366477 -0.0000011824797687687294" rpy="-3.1415853071795867 6.1780052000054254e-24 1.5708" />
+    <parent
+      link="Gimbal Dynamic" />
+    <child
+      link="Camera" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Diff Bar">
+  </link>
+  <joint
+    name="Diff Bar Revolute"
+    type="fixed">
+    <origin xyz="1.247421859533104 -1.1018242654046033 0.9989503170918934" rpy="1.5707618786924578 -0.000023041178378346485 -3.1415689112080125" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Diff Bar" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
