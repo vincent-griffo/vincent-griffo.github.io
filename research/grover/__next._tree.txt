@@ -3,4 +3,4 @@
 :HL["/_next/static/media/space_grotesk_latin-s.p.092gko6h6levo.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/chunks/0uqqs5sh_8ug_.css","style"]
 :HL["/projects/grover/cover.webp","image",{"fetchPriority":"high"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"research","param":null,"prefetchHints":4192,"slots":{"children":{"name":"grover","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"xe8upPCyi_ZirA8OT72eJ"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"research","param":null,"prefetchHints":4192,"slots":{"children":{"name":"grover","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"Jhjrp-lWhujNLA6PBIuiL"}
