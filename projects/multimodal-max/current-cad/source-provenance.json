@@ -1,0 +1,200 @@
+{
+  "provenance": "Direct tessellation of the user-supplied Onshape STEP assemblies. No parts synthesized or repositioned.",
+  "converter": "occt-import-js 0.0.23",
+  "models": [
+    {
+      "id": "MM-101",
+      "title": "URDF full assembly",
+      "path": "/projects/multimodal-max/current-cad/urdf-full-assembly.glb",
+      "componentCount": 3185,
+      "sourceMeshCount": 3197,
+      "emptySourceMeshes": [
+        {
+          "sourceMeshIndex": 182,
+          "name": "AK45-36-KV80.STEP<1>[13]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 185,
+          "name": "AK45-36-KV80.STEP<1>[9]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 198,
+          "name": "AK45-36-KV80.STEP<1>[13]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 383,
+          "name": "AK45-36-KV80.STEP<1>[13]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 386,
+          "name": "AK45-36-KV80.STEP<1>[9]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 399,
+          "name": "AK45-36-KV80.STEP<1>[13]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 584,
+          "name": "AK45-36-KV80.STEP<1>[13]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 587,
+          "name": "AK45-36-KV80.STEP<1>[9]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 600,
+          "name": "AK45-36-KV80.STEP<1>[13]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 785,
+          "name": "AK45-36-KV80.STEP<1>[13]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 788,
+          "name": "AK45-36-KV80.STEP<1>[9]",
+          "faceCount": 1
+        },
+        {
+          "sourceMeshIndex": 801,
+          "name": "AK45-36-KV80.STEP<1>[13]",
+          "faceCount": 1
+        }
+      ],
+      "triangleCount": 5207940,
+      "vertexCount": 4374852,
+      "primitiveCount": 3185,
+      "sourceBrepFaceCount": 90754,
+      "materialCount": 21,
+      "sizeBytes": 26228428,
+      "bounds": {
+        "min": [
+          -0.5809886455535889,
+          -0.1889466494321823,
+          -0.5090274810791016
+        ],
+        "max": [
+          0.5809876322746277,
+          0.16767500340938568,
+          0.5090277791023254
+        ]
+      },
+      "dimensions": [
+        1.1619762778282166,
+        0.356621652841568,
+        1.018055260181427
+      ],
+      "configuration": "STEP assembly",
+      "source": "URDF Full ASSY.step",
+      "sourceSha256": "20c22ff25140b41c7b529f38884a822b95a5f4f307844f11b66c119cbc71410f",
+      "glbSha256": "5edc820db471768f70b5e429803c02017942f33e2a071395479f4cdcb8d56f6e",
+      "tessellation": {
+        "linearUnit": "meter",
+        "linearDeflectionType": "absolute_value",
+        "linearDeflection": 0.00015,
+        "angularDeflection": 0.35
+      },
+      "compression": "Meshopt with precision-bounded floating-point filtering; no triangle removal",
+      "maxPositionErrorMeters": 0.000003814697265625,
+      "maxNormalComponentError": 0.00048828125,
+      "maxNormalAngleDegrees": 0.04728162966043766,
+      "poster": "/projects/multimodal-max/current-cad/full-assembly-preview.webp",
+      "cameraDirection": [
+        1.5,
+        0.9,
+        1.4
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "importNotes": {
+        "sourceProductLeafOccurrences": 3201,
+        "omittedByImporter": {
+          "name": "AK45-36-KV80.STEP<1>[10]",
+          "product": "#445777",
+          "definition": "#444433",
+          "shell": "#467",
+          "faceEntities": [
+            "#204023",
+            "#204024",
+            "#204025",
+            "#204026",
+            "#204027",
+            "#204028",
+            "#204029",
+            "#204030"
+          ],
+          "occurrences": 4
+        },
+        "finding": "Several small imported motor surface shells have inconsistent curve/vertex boundaries. The examined [13] face has only two distinct boundary vertices. OpenCascade omitted four [10] shell instances and produced 12 zero-triangle shell entries, retained as reference nodes. No replacement surfaces were fabricated. The external assembly, placements, belts, wheels, fasteners, and all successfully tessellated surfaces are retained."
+      }
+    },
+    {
+      "id": "MM-102",
+      "title": "Single-leg assembly",
+      "path": "/projects/multimodal-max/current-cad/single-leg-assembly.glb",
+      "componentCount": 404,
+      "sourceMeshCount": 404,
+      "emptySourceMeshes": [],
+      "triangleCount": 697960,
+      "vertexCount": 631312,
+      "primitiveCount": 404,
+      "sourceBrepFaceCount": 13437,
+      "materialCount": 18,
+      "sizeBytes": 5961572,
+      "bounds": {
+        "min": [
+          -0.29067137837409973,
+          -0.24341657757759094,
+          -0.003000000026077032
+        ],
+        "max": [
+          0.2134999930858612,
+          0.1145000010728836,
+          0.5094415545463562
+        ]
+      },
+      "dimensions": [
+        0.5041713714599609,
+        0.35791657865047455,
+        0.5124415545724332
+      ],
+      "configuration": "STEP assembly",
+      "source": "Main Assembly (1).step",
+      "sourceSha256": "29449c71faaab6feb3546776d608ea29445b2aba0af7c7af1f3bb900b426f222",
+      "glbSha256": "975831ecae7e2cd907185215c94e179927d9bd9f498bc769aa53fa678d7db94c",
+      "tessellation": {
+        "linearUnit": "meter",
+        "linearDeflectionType": "absolute_value",
+        "linearDeflection": 0.00015,
+        "angularDeflection": 0.35
+      },
+      "compression": "Meshopt with precision-bounded floating-point filtering; no triangle removal",
+      "maxPositionErrorMeters": 0.000003814697265625,
+      "maxNormalComponentError": 0.00048828125,
+      "maxNormalAngleDegrees": 0.04649006500169294,
+      "poster": "/projects/multimodal-max/current-cad/leg-assembly-preview.webp",
+      "cameraDirection": [
+        1.5,
+        0.75,
+        1.3
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ]
+    }
+  ]
+}
