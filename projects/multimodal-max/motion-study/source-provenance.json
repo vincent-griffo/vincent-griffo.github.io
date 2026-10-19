@@ -1,0 +1,68 @@
+{
+  "sourceFile": "Gecko Axis Review (1).html",
+  "sourceSha256": "dbf7c593d1831da029525463f766f5cb5fe902f2ba366becd68b7edb82473f25",
+  "generator": "scripts/prepare-max-motion-study.mjs",
+  "engine": {
+    "name": "Three.js",
+    "revision": "180",
+    "license": "MIT; original embedded license retained in engine.js"
+  },
+  "modelSources": {
+    "leg": "urdf_front_left_leg.urdf",
+    "legSha256": "9e2fde1252d6c8e820593dc99e4832ec2962e65faed6ac1aac083def972c9435",
+    "chassis": "urdf_full_assy.urdf",
+    "chassisSha256": "0efa8532074b600bbe6b3b06b507ad2e4eaec7a7ab9928e83b220585d2065988"
+  },
+  "sanitizedFields": [
+    "MODEL.rover.source"
+  ],
+  "scope": "Kinematic crawl preview. Reflected newer legs are a visualization assembly, not verified mirrored hardware. No stability/dynamics or inter-leg collision certification.",
+  "transformations": [
+    "Extract embedded engine and model into cacheable local files.",
+    "Decode the two base64 payloads to their unchanged gzip bytes.",
+    "Replace inline payload decoding with same-origin fetch and gzip decompression.",
+    "Wrap custom application in an async initializer to await model.json.",
+    "Remove absolute source filesystem paths; retain source basenames and hashes.",
+    "All kinematic formulas, samples, axes, camera controls and original interaction behavior are otherwise unchanged."
+  ],
+  "geometry": [
+    {
+      "id": "geometry-payload",
+      "file": "geometry.bin",
+      "compressedBytes": 17603065,
+      "rawBytes": 43949688,
+      "compressedSha256": "109088397e97263b294a49f85c89090b6cd68c7f77224c2ec7ce93141cbb0ffb",
+      "rawSha256": "a74ef0d693d7f0dd3895deb080efee34104aa5c8c3a71b677924d612ea030a11"
+    },
+    {
+      "id": "chassis-payload",
+      "file": "chassis.bin",
+      "compressedBytes": 585913,
+      "rawBytes": 2232288,
+      "compressedSha256": "5ddb2e765eed81e5f8eb6b6e3389f35a52d1c835297ab75ef3916f93dc2badfd",
+      "rawSha256": "eefe23d88c42bade6b57027da25f821c6ede96cdca8f41766169f9813a9b2d52"
+    }
+  ],
+  "files": {
+    "engine.js": {
+      "bytes": 2045573,
+      "sha256": "a9e1047fc1b47dcdc239d8d6c5829c7a08dabd72c557d6316fbee6e0a5ee84fe"
+    },
+    "model.json": {
+      "bytes": 3015154,
+      "sha256": "a2df36c430709fa133b24de3c843c59c6a2e9e2e5fd6360bf7f1f9586d7e1d80"
+    },
+    "viewer.js": {
+      "bytes": 80391,
+      "sha256": "b0c3d92cdd47df6b4d46f744d5c61d751c574b30496b2d2a827b7395cadd8a4a"
+    },
+    "geometry.bin": {
+      "bytes": 17603065,
+      "sha256": "109088397e97263b294a49f85c89090b6cd68c7f77224c2ec7ce93141cbb0ffb"
+    },
+    "chassis.bin": {
+      "bytes": 585913,
+      "sha256": "5ddb2e765eed81e5f8eb6b6e3389f35a52d1c835297ab75ef3916f93dc2badfd"
+    }
+  }
+}

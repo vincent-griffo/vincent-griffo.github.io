@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Multimodal Max · Morphology &amp; motion</title>
+  <link rel="stylesheet" href="interface.css">
+  <script defer src="engine.js"></script>
+  <script defer src="viewer.js"></script>
+  <script defer src="interface.js"></script>
+</head>
+<body>
+  <main id="viewport" aria-label="Interactive Multimodal Max model">
+    <div class="masthead" hidden><div class="eyebrow"></div><h1 id="mode-title"></h1><p id="mode-subtitle"></p></div>
+    <svg class="leaders" id="leaders" aria-hidden="true"></svg><div class="label-layer" id="labels"></div>
+    <nav class="views" aria-label="Camera views">
+      <button type="button" data-view="perspective" class="active">3D</button>
+      <button type="button" data-view="top">Top</button>
+      <button type="button" data-view="front">Front</button>
+      <button type="button" data-view="left">Side</button>
+    </nav>
+    <p class="interaction">Drag to orbit · Scroll to zoom</p>
+    <div id="pose-status" hidden></div>
+    <div id="loading" role="status"><span class="loading-ring" aria-hidden="true"></span><strong>Loading the model</strong><span>This may take a moment on the first visit.</span></div>
+  </main>
+  <aside class="panel" aria-label="Model controls">
+    <nav class="master-tabs" role="tablist" aria-label="Assembly view">
+      <button type="button" role="tab" data-master="rover" aria-selected="false" aria-controls="viewport">Full rover</button>
+      <button type="button" role="tab" data-master="leg" aria-selected="true" aria-controls="viewport">Single leg</button>
+    </nav>
+    <div id="assembly-eyebrow" hidden></div>
+    <h2 class="control-heading">Posture</h2>
+    <nav class="mode-tabs" role="tablist" aria-label="Robot posture">
+      <button type="button" role="tab" data-mode="gecko" aria-selected="true" aria-controls="viewport">Gecko</button>
+      <button type="button" role="tab" data-mode="dog" aria-selected="false" aria-controls="viewport">Dog</button>
+      <button type="button" role="tab" data-mode="spider" aria-selected="false" aria-controls="viewport">Spider</button>
+      <button type="button" role="tab" data-mode="tracing" aria-selected="false" aria-controls="viewport">Full sequence</button>
+    </nav>
+    <div class="playback">
+      <div class="play-buttons">
+        <button type="button" id="play-pause">Pause</button>
+        <button type="button" id="reset-pose">Restart</button>
+        <button type="button" id="reverse-cycle" aria-pressed="false">Reverse</button>
+      </div>
+      <div class="phase-line"><strong id="phase-name">Swing</strong><span id="cycle-percent">0%</span></div>
+      <input id="cycle-position" aria-label="Cycle position" type="range" min="0" max="1" step="0.0001" value="0">
+      <details class="speed-settings"><summary>Playback speed</summary>
+        <output id="phase-duration">1×</output>
+        <input id="playback-speed" aria-label="Playback speed" type="range" min="-2.9068905956085187" max="2" step="any" value="0">
+        <div class="range-ends"><span>Slower</span><span>Faster</span></div>
+      </details>
+    </div>
+    <div class="display-options">
+      <label><input id="terrain-toggle" type="checkbox">Uneven terrain</label>
+      <label><input id="show-path" type="checkbox">Motion trails</label>
+    </div>
+    <p class="study-note">Kinematic study. Hardware integration and testing are still in progress.</p>
+    <details class="inspection" id="inspection-panel">
+      <summary>Inspect the mechanism</summary>
+      <label id="leg-selector-row" hidden>Leg <select id="leg-selector"><option value="FL">Front left</option><option value="RR">Rear right</option><option value="FR">Front right</option><option value="RL">Rear left</option></select></label>
+      <div class="options"><label><input id="xray" type="checkbox">Translucent</label><label><input id="show-labels" type="checkbox">Axis labels</label><label><input id="show-world" type="checkbox">World axes</label></div>
+      <label class="all-axes"><input id="all-axes" type="checkbox">All joint axes</label>
+      <div id="main-axes"></div>
+      <details id="drive-details"><summary>Drive pulleys &amp; coupled axes</summary><div id="drive-axes"></div></details>
+      <div class="detail" id="axis-detail"></div>
+      <div class="live-angles" aria-live="off">
+        <div><span>Motor 1</span><output id="angle-m1" aria-live="off">0°</output></div><div><span>Motor 2 / AD</span><output id="angle-m2_relative_ad" aria-live="off">0°</output></div>
+        <div><span>Motor 3</span><output id="angle-m3" aria-live="off">0°</output></div><div><span>Motor 4</span><output id="angle-m4" aria-live="off">0°</output></div>
+        <div><span>Primary bend</span><output id="angle-primary" aria-live="off">0°</output></div><div><span>Secondary bend</span><output id="angle-secondary" aria-live="off">0°</output></div>
+        <div><span>Swerve</span><output id="angle-swerve" aria-live="off">0°</output></div><div><span>Wheel spin</span><output id="angle-wheel" aria-live="off">0°</output></div>
+      </div>
+      <div id="current-contact" class="diagnostic"></div><div id="clearance-status" class="diagnostic"></div><div id="sequence-progress" class="diagnostic" hidden></div>
+    </details>
+    <details class="inspection" id="study-details">
+      <summary>About this model</summary>
+      <p>The supplied study combines an earlier chassis with newer mirrored legs. It shows kinematics, not validated balance, inter-leg clearance, or contact dynamics.</p>
+      <h3 id="mode-heading">Gecko</h3><p id="mode-intro"></p><p class="mode-note" id="mode-note"></p>
+      <p id="terrain-note" hidden>Terrain contact is a kinematic preview, not a physics simulation.</p>
+      <div class="options" id="tracing-options" hidden><label><input id="trace-body" type="checkbox" checked>Body trail</label><label><input id="trace-wheel" type="checkbox" checked>Wheel trails</label><label><input id="follow-travel" type="checkbox" checked>Follow travel</label></div>
+      <div class="path-card" id="path-card"></div>
+      <p>The sampled clearance screen excludes 31 existing close interfaces. It is not a collision-free certification. Amber wrist highlights mark unverified travel; orange parts mark sampled contact.</p>
+    </details>
+  </aside>
+</body>
+</html>
