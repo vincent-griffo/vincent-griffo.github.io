@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="176" viewBox="0 0 800 176" role="img" aria-labelledby="title">
+  <title id="title">AstroX</title>
+  <!-- Orbit mark from the AstroX website header: https://aerospaceroboticslab.github.io/ -->
+  <g transform="translate(83 88) scale(4.2)" fill="none" stroke="#f2eee5" stroke-width="2.4">
+    <ellipse rx="13" ry="5" transform="rotate(45)"/>
+    <ellipse rx="13" ry="5" transform="rotate(-45)"/>
+    <circle r="2.8" fill="#f2eee5" stroke="none"/>
+  </g>
+  <text x="184" y="128" fill="#f2eee5" font-family="Arial, Helvetica, sans-serif" font-size="116" font-weight="700" letter-spacing="-3">AstroX</text>
+</svg>
